@@ -1,70 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Balut Bee Meme Coin</title>
+  <meta name="description" content="Balut Bee — the tastiest meme coin buzzing in the city. Join the hive on Telegram and X." />
+  <meta property="og:title" content="Balut Bee Meme Coin" />
+  <meta property="og:description" content="Join the hive. Community, roadmap, and updates." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://armadachan5-jpg.github.io/balutbee-site/" />
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+    :root{
+      --bg1:#0f1226;      /* deep navy */
+      --bg2:#1e2146;      /* indigo */
+      --card:#171936cc;   /* glass card */
+      --accent:#ff9a1f;   /* honey orange */
+      --accent-2:#ffd36b; /* pale honey */
+      --text:#e7e9ff;     /* soft white */
+      --muted:#b6b9d6;
+      --ring: rgba(255,154,31,.35);
+      --shadow: 0 20px 40px rgba(0,0,0,.35);
+      --radius: 16px;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px;
+
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;color:var(--text);background:linear-gradient(160deg,var(--bg1),var(--bg2)) fixed;}
+    a{color:inherit;text-decoration:none}
+
+    .wrap{
+      max-width:1100px;margin:0 auto;padding:28px;
     }
-    h1 {
-      color: #ff9800;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+
+    /* HERO */
+    .hero{
+      display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;
+      padding:32px; border-radius:var(--radius);
+      background:radial-gradient(1200px 500px at -10% -20%,rgba(255,212,117,.12),transparent 60%),
+                 radial-gradient(800px 400px at 120% 120%,rgba(255,154,31,.12),transparent 60%),
+                 var(--card);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,.06);
     }
-    p {
-      color: #333;
-      font-size: 1.2rem;
+    .hero h1{font-size:clamp(28px,5vw,44px);margin:0 0 12px;letter-spacing:.5px}
+    .hero p.lead{margin:0 0 22px;color:var(--muted);font-size:clamp(15px,2.2vw,18px)}
+    .logo{
+      width:100%;max-width:320px;aspect-ratio:1/1;border-radius:20px;
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+      box-shadow:0 8px 24px rgba(0,0,0,.35), 0 0 0 8px var(--ring);
+      display:block;margin:0 auto;
     }
-    img {
-      margin: 20px 0;
-      max-width: 300px;
+
+    .buttons{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      padding:12px 18px;border-radius:12px;font-weight:700;letter-spacing:.2px;
+      background:var(--accent);color:#1a1100;box-shadow:0 10px 20px rgba(255,154,31,.25);
+      transition:transform .08s ease, box-shadow .15s ease, filter .2s;
     }
-    .links {
-      margin-top: 30px;
+    .btn:hover{transform:translateY(-2px);filter:saturate(1.05);box-shadow:0 14px 28px rgba(255,154,31,.35)}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text)}
+    .btn.ghost:hover{border-color:rgba(255,255,255,.35)}
+
+    /* FEATURES */
+    .section{margin-top:34px}
+    .card{
+      background:var(--card);border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;
     }
-    .links a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background: #ff9800;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.3s ease;
-    }
-    .links a:hover {
-      background: #e68900;
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .tile{padding:18px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+    .tile h3{margin:0 0 6px;font-size:18px}
+    .tile p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+
+    /* ROADMAP */
+    .road{display:grid;gap:14px}
+    .step{padding:14px;border-left:3px solid var(--accent);background:rgba(255,255,255,.03);border-radius:10px}
+    .muted{color:var(--muted)}
+
+    /* FOOTER */
+    footer{margin:26px 0 10px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* MOBILE */
+    @media (max-width:860px){
+      .hero{grid-template-columns:1fr; text-align:center}
+      .buttons{justify-content:center}
+      .grid{grid-template-columns:1fr;gap:12px}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🐝 Welcome to Balut Bee Meme Coin 🐝</h1>
-    <p>Community, roadmap, and updates</p>
+  <div class="wrap">
 
-    <!-- Balut Bee Logo -->
-    <img src="911913f6-3e72-4be8-b36f-65417e50305a.png" alt="Balut Bee Logo">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>Balut Bee 🐝 — Pinoy Meme Coin with Real Street Flavor</h1>
+        <p class="lead">
+          From Manila streets to your wallet. Community first, vibes heavy, and utility we’ll ship step-by-step.
+        </p>
+        <div class="buttons">
+          <a class="btn" href="https://t.me/+M5zhPSGcoKVhYzAx" target="_blank" rel="noopener">Join Telegram</a>
+          <a class="btn ghost" href="https://x.com/balutcoinpinoy?s=21" target="_blank" rel="noopener">Follow on X</a>
+        </div>
+        <p class="muted" style="margin-top:10px">Not launching today — building the hive, learning, and preparing a proper relaunch.</p>
+      </div>
 
-    <p>Stay tuned for more info!</p>
+      <!-- Logo -->
+      <div>
+        <img class="logo" src="./9119136f-3e72-4be8-b36f-65417e50305a.png" alt="Balut Bee Logo" />
+      </div>
+    </section>
 
-    <!-- Social Links -->
-    <div class="links">
-      <a href="https://t.me/+M5zhPSGcoKVhYzAx" target="_blank">Join Telegram</a>
-      <a href="https://x.com/balutcoinpinoy?s=21" target="_blank">Follow on X</a>
-    </div>
+    <!-- FEATURES -->
+    <section class="section card">
+      <h2 style="margin:0 0 12px">Why Balut Bee?</h2>
+      <div class="grid">
+        <div class="tile">
+          <h3>Pinoy Culture</h3>
+          <p>Balut + Bee = unforgettable brand. Built for PH crypto Twitter & global degen humor.</p>
+        </div>
+        <div class="tile">
+          <h3>Community-Led</h3>
+          <p>Open comms on Telegram. We move with transparency, memes, and measurable updates.</p>
+        </div>
+        <div class="tile">
+          <h3>Simple to Start</h3>
+          <p>Lightweight site + socials now; liquidity, DEX, and utilities rolled out responsibly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOKEN & ROADMAP PLACEHOLDERS -->
+    <section class="section card">
+      <h2 style="margin:0 0 12px">Token Info (Coming Soon)</h2>
+      <p class="muted">Contract will be published after relaunch prep (audit, LP plan, DEX listing checklist).</p>
+    </section>
+
+    <section class="section card">
+      <h2 style="margin:0 0 12px">Roadmap (Lite)</h2>
+      <div class="road">
+        <div class="step"><strong>Phase 0:</strong> Relearn & prep — finalize branding, socials, website (you’re here!)</div>
+        <div class="step"><strong>Phase 1:</strong> Launch properly — fair start, LP plan, DEX listing, basic analytics</div>
+        <div class="step"><strong>Phase 2:</strong> Community growth — quests, memes, collabs, CEX watchlist</div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Balut Bee. All rights reserved.
+    </footer>
   </div>
+
+  <script>
+    // set year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Balut Bee Meme Coin</title>
+  <meta name="description" content="Balut Bee — the tastiest meme coin buzzing in the city. Join the hive on Telegram and X." />
+  <meta property="og:title" content="Balut Bee Meme Coin" />
+  <meta property="og:description" content="Join the hive. Community, roadmap, and updates." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://armadachan5-jpg.github.io/balutbee-site/" />
+
+  <style>
+    :root{
+      --bg1:#0f1226;      /* deep navy */
+      --bg2:#1e2146;      /* indigo */
+      --card:#171936cc;   /* glass card */
+      --accent:#ff9a1f;   /* honey orange */
+      --accent-2:#ffd36b; /* pale honey */
+      --text:#e7e9ff;     /* soft white */
+      --muted:#b6b9d6;
+      --ring: rgba(255,154,31,.35);
+      --shadow: 0 20px 40px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;color:var(--text);background:linear-gradient(160deg,var(--bg1),var(--bg2)) fixed;}
+    a{color:inherit;text-decoration:none}
+
+    .wrap{
+      max-width:1100px;margin:0 auto;padding:28px;
+    }
+
+    /* HERO */
+    .hero{
+      display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;
+      padding:32px; border-radius:var(--radius);
+      background:radial-gradient(1200px 500px at -10% -20%,rgba(255,212,117,.12),transparent 60%),
+                 radial-gradient(800px 400px at 120% 120%,rgba(255,154,31,.12),transparent 60%),
+                 var(--card);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,.06);
+    }
+    .hero h1{font-size:clamp(28px,5vw,44px);margin:0 0 12px;letter-spacing:.5px}
+    .hero p.lead{margin:0 0 22px;color:var(--muted);font-size:clamp(15px,2.2vw,18px)}
+    .logo{
+      width:100%;max-width:320px;aspect-ratio:1/1;border-radius:20px;
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+      box-shadow:0 8px 24px rgba(0,0,0,.35), 0 0 0 8px var(--ring);
+      display:block;margin:0 auto;
+    }
+
+    .buttons{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      padding:12px 18px;border-radius:12px;font-weight:700;letter-spacing:.2px;
+      background:var(--accent);color:#1a1100;box-shadow:0 10px 20px rgba(255,154,31,.25);
+      transition:transform .08s ease, box-shadow .15s ease, filter .2s;
+    }
+    .btn:hover{transform:translateY(-2px);filter:saturate(1.05);box-shadow:0 14px 28px rgba(255,154,31,.35)}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text)}
+    .btn.ghost:hover{border-color:rgba(255,255,255,.35)}
+
+    /* FEATURES */
+    .section{margin-top:34px}
+    .card{
+      background:var(--card);border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;
+    }
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .tile{padding:18px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+    .tile h3{margin:0 0 6px;font-size:18px}
+    .tile p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+
+    /* ROADMAP */
+    .road{display:grid;gap:14px}
+    .step{padding:14px;border-left:3px solid var(--accent);background:rgba(255,255,255,.03);border-radius:10px}
+    .muted{color:var(--muted)}
+
+    /* FOOTER */
+    footer{margin:26px 0 10px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* MOBILE */
+    @media (max-width:860px){
+      .hero{grid-template-columns:1fr; text-align:center}
+      .buttons{justify-content:center}
+      .grid{grid-template-columns:1fr;gap:12px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>Balut Bee 🐝 — Pinoy Meme Coin with Real Street Flavor</h1>
+        <p class="lead">
+          From Manila streets to your wallet. Community first, vibes heavy, and utility we’ll ship step-by-step.
+        </p>
+        <div class="buttons">
+          <a class="btn" href="https://t.me/+M5zhPSGcoKVhYzAx" target="_blank" rel="noopener">Join Telegram</a>
+          <a class="btn ghost" href="https://x.com/balutcoinpinoy?s=21" target="_blank" rel="noopener">Follow on X</a>
+        </div>
+        <p class="muted" style="margin-top:10px">Not launching today — building the hive, learning, and preparing a proper relaunch.</p>
+      </div>
+
+      <!-- Logo -->
+      <div>
+        <img class="logo" src="./9119136f-3e72-4be8-b36f-65417e50305a.png" alt="Balut Bee Logo" />
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section card">
+      <h2 style="margin:0 0 12px">Why Balut Bee?</h2>
+      <div class="grid">
+        <div class="tile">
+          <h3>Pinoy Culture</h3>
+          <p>Balut + Bee = unforgettable brand. Built for PH crypto Twitter & global degen humor.</p>
+        </div>
+        <div class="tile">
+          <h3>Community-Led</h3>
+          <p>Open comms on Telegram. We move with transparency, memes, and measurable updates.</p>
+        </div>
+        <div class="tile">
+          <h3>Simple to Start</h3>
+          <p>Lightweight site + socials now; liquidity, DEX, and utilities rolled out responsibly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOKEN & ROADMAP PLACEHOLDERS -->
+    <section class="section card">
+      <h2 style="margin:0 0 12px">Token Info (Coming Soon)</h2>
+      <p class="muted">Contract will be published after relaunch prep (audit, LP plan, DEX listing checklist).</p>
+    </section>
+
+    <section class="section card">
+      <h2 style="margin:0 0 12px">Roadmap (Lite)</h2>
+      <div class="road">
+        <div class="step"><strong>Phase 0:</strong> Relearn & prep — finalize branding, socials, website (you’re here!)</div>
+        <div class="step"><strong>Phase 1:</strong> Launch properly — fair start, LP plan, DEX listing, basic analytics</div>
+        <div class="step"><strong>Phase 2:</strong> Community growth — quests, memes, collabs, CEX watchlist</div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Balut Bee. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // set year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
